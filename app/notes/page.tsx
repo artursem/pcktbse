@@ -28,10 +28,10 @@ const notes = await getNotes()
   return (
     <>
         {notes.items.map((note) => (
-            <div key={note.id} style={{borderRadius: '6px', backgroundColor: '#4d4d4d', margin: '1rem', padding: '12px'}}>
-            <h4 className='text-2xl font-bold'>{note.title}</h4>
-            <p>{note.content}</p>
-            <Link href={`/notes/${note.id}`} className='font-bold'>read more</Link>
+            <div key={note.id} className='rounded bg-slate-700 m-4 p-3'>
+            <h4 className='text-2xl font-bold text-slate-100'>{note.title}</h4>
+            <p className='text-slate-200'>{note.content}</p>
+            <Link href={`/notes/${note.id}`} className='font-bold text-slate-500 text-sm'>read more <span className="font-black">&gt;</span> </Link>
             </div>
         ))}
     </>

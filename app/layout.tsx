@@ -19,10 +19,10 @@ export default function RootLayout({
       <head>
         <title>hello world</title>
       </head>
-      <body className={inter.className} > 
+      <body className='bg-slate-950'> 
         <header>
           <nav>
-            <h1 className='text-3xl font-bold color-gray-800 m-4'>notes</h1>
+            <h1 className='text-3xl font-bold text-slate-100 m-4'>notes</h1>
           </nav>
           </header>  
           <main>

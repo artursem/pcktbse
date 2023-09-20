@@ -20,8 +20,8 @@ const note = await getNote(params.id)
 
   return (
     <div>
-        <h1>{note.title}</h1>
-        <p>{note.content}</p>
+        <h1 className="text-slate-100 font-bold">{note.title}</h1>
+        <p className="text-slate-200">{note.content}</p>
     </div>
   )
 }
