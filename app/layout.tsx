@@ -17,7 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <title>hello world</title>
+        <title>notes</title>
       </head>
       <body className='bg-slate-950'> 
         <header>

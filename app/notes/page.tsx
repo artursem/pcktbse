@@ -2,6 +2,9 @@ import React from 'react'
 import PocketBase from 'pocketbase';
 import Link from 'next/link';
 
+// Components
+import { NoteContainer } from './components/NoteContainer';
+
 export const dynamic = 'auto',
  dynamicParams = true, 
  revalidate = 10, 
@@ -24,15 +27,12 @@ interface Note {
 }
 export default async  function NotesPage() {
 const notes = await getNotes()
+console.log(notes)
 
   return (
     <>
-        {notes.items.map((note) => (
-            <div key={note.id} className='rounded bg-slate-700 m-4 p-3'>
-            <h4 className='text-2xl font-bold text-slate-100'>{note.title}</h4>
-            <p className='text-slate-200'>{note.content}</p>
-            <Link href={`/notes/${note.id}`} className='font-bold text-slate-500 text-sm'>read more <span className="font-black">&gt;</span> </Link>
-            </div>
+        {notes.items.map(({id, title, content}) => (
+            <NoteContainer key={id} id={id} title={title} content={content} />
         ))}
     </>
   )
